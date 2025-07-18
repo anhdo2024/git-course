@@ -1,0 +1,5 @@
+Giải thích các câu lệnh: 
+_ git init  -->  Khởi tạo thư mục đc quản lý bởi git
+_ git add <file_name> --> thêm 1 file từ vùng working directory vào vùng staging
+_ git add .   --> đưa toàn tất cả file từ vùng working directory vào vùng staging
+_ gitcommit -m “message” --> tạo 1 commit mới nội dung <message>
