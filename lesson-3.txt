@@ -1,0 +1,79 @@
+1. Giải thích các câu lệnh: 
+_ git commit --amend  -->  Sửa commit message gần nhất, đi vào giao diện vim
+_ git commit --amend -m"<message>" --> Sửa commit message gần nhất,không đi vào giao diện vim , sửa trưc tiếp message
+_ git restore --staged <file>   --> di chuyển từ staging về vùng Repository
+_ gitcommit reset HEAD~1  --> di chuyển 1 commit mới nhất về working directory
+
+
+2.
+a. Tạo 3 file: file1, file2, file3
+i. Vùng local: file1, file2, file3
+ii. Vùng Working: k (empty)
+iii. Vùng staging: k (empty)
+iv. Vùng repository: k (empty)
+
+
+b. Chạy lệnh: git init
+i. Vùng working: file1, file2, file3
+ii. Vùng staging: k (empty)
+iii. Vùng repository: k (empty)
+
+
+c. Chạy lệnh: git commit -m" init project"
+i. Vùng working: file1, file2, file3
+ii. Vùng staging: k (empty)
+iii. Vùng repository: k (empty)
+
+d. Chạy lệnh: git add file1
+i. Vùng working:  file2, file3
+ii. Vùng staging: file 1
+iii. Vùng repository: k (empty)
+
+e. Chạy lệnh: git commit -m"add file"
+i. Vùng working:  file2, file3
+ii. Vùng staging: k (empty)
+iii. Vùng repository: file1
+
+f. Chạy lệnh: git add .
+i. Vùng working:  k (empty)
+ii. Vùng staging: file2, file3
+iii. Vùng repository: file1
+
+g. Chạy lệnh: git restore -- stage file2
+i. Vùng working:  file2
+ii. Vùng staging: file3
+iii. Vùng repository: file1
+
+h. Chạy lệnh: git commit -m"add all file"
+i. Vùng working:  file2
+ii. Vùng staging: k (empty)
+iii. Vùng repository: file1, file3
+
+
+i. Chạy lệnh: git reset HEAD~1
+i. Vùng working:  file2,file3
+ii. Vùng staging: k (empty)
+iii. Vùng repository: file1
+
+3.
+a. Run lện git init
+i. Vùng working:  k (empty)
+ii. Vùng staging: k (empty)
+iii. Vùng repository: k (empty)
+
+b. Tao file file1.txt,file2.txt,oops/file3.txt
+i. Vùng working:  file1.txt,file2.txt,oops/file3.txt
+ii. Vùng staging: k (empty)
+iii. Vùng repository: k (empty)
+
+c.Thêm file. gitignore, thêm 2 dòng file1.txt và oops/ --> igore file1 và file3
+
+d. Chay lệnh: git add.
+i. Vùng working:  igore file1 và file3
+ii. Vùng staging: file2.txt 
+iii. Vùng repository: k (empty)
+
+e. Chạy lệnh: git commit -m"init project"
+i. Vùng working:  igore file1 và file3
+ii. Vùng staging: k (empty)
+iii. Vùng repository: file2.txt
